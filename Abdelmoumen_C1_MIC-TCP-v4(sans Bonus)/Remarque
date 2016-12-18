@@ -1,0 +1,4 @@
+Il y'a un bug quand il y'a des pertes des deux cotés du réseau et qu'il y'a un LOST lors de l'envoie de l'ack coté client.
+En effet, le IP_recv() du client, time_out donc, et si la fiabilité est acceptable, il ne reenvoie rien(ce qui est bien car le server avait déja recu le paquet) sauf qu'il met à jour PE(important car on a rien envoyé "normalement" vu qu'il le ip_recv à time_out, sauf qu'on avait bel et bien envoyé)
+Au final, le paquet suivant sera pas accepté par le server, car il aura le même numéro de séquence, c'est qu'au paquet suivant que les numéro de sequences ce resynchronise.
+Avec le calcul RTT que j'ai implementé, ce problème est résolu.
