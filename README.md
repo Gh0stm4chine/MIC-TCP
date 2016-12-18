@@ -1,5 +1,13 @@
 # MIC-TCP
 
+Usage : 
+make
+./tsock_video -p -t mictcp       and then ./tsock_video -s -t mictcp (in another terminal)
+or 
+./tsock_texte -p -t mictcp       and then ./tsock_texte -s -t mictcp (in another terminal)
+
+Feel free to change the loss_rate in mictcp.c to be found in src to test the MICTCP protocol liability 
+
 L’objectif du BE est de	 concevoir et	de développer	en langage C un	protocole	de niveau	Transport	appelé	MIC-TCP visant	à	transport	un	 flux	vidéo	distribué	en	temps	réel	par	une	application	(fournie	par	les	enseignants)	appelée	tsock-vidéo.
 
 L’application	 tsock-vidéo est basée sur les spécifications suivantes : 
